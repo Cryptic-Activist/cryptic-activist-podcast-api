@@ -26,7 +26,7 @@ const UserProfileImageSchema = new mongoose.Schema({
 UserProfileImageSchema.pre('save', function () {
   if (this.origin !== 'Github') {
     if (!this.url) {
-      this.url = `https://${process.env.BUCKET_NAME}.s3.amazonaws.com/${this.key}`;
+      this.url = `${process.env.APP_URL}/files/${this.key}`;
     }
   }
 });

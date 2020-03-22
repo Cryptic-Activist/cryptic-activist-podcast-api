@@ -7,7 +7,6 @@ const uuidv4 = require('uuid/v4');
 app.use(cors());
 
 const Podcast = require('../../models/podcast/Podcast');
-const User = require('../../models/user/User');
 const Comment = require('../../models/podcast/PodcastComment');
 const CommentReply = require('../../models/podcast/PodcastCommentReply');
 

@@ -44,12 +44,9 @@ app.use(
   express.static(path.resolve(__dirname, '.', 'tmp', 'uploads')),
 );
 
-app.use('/auth', require('./routes/auth/auth'));
-app.use('/users', require('./routes/users'));
 app.use('/podcasts', require('./routes/podcasts'));
 app.use('/podcasts/contributor', require('./routes/contributor/podcasts'));
 app.use('/admin/podcasts', require('./routes/admin/podcasts/podcasts'));
-app.use('/admin/user', require('./routes/admin/user/user'));
 
 const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, {

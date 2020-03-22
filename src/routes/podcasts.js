@@ -10,6 +10,8 @@ app.use(cors());
 
 // Load Podcast model
 const Podcast = require('../models/podcast/Podcast');
+const User = require('../models/user/User');
+const UserProfileImage = require('../models/user/UserProfileImage');
 const PodcastComment = require('../models/podcast/PodcastComment')
 const PodcastAudioFile = require('../models/podcast/PodcastAudioFile');
 const PodcastCover = require('../models/podcast/PodcastCover');
@@ -138,7 +140,7 @@ app.post('/comments/', async (req, res) => {
     podcastId
   } = req.body;
 
-  console.log('comments:', podcastId)
+  console.log('podcastId comments:', podcastId)
 
   PodcastComment.find({
     podcast: podcastId,
